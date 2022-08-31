@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7156c50ef7.js" crossorigin="anonymous"></script>
+    <title>웹코딩평가hoom</title>
+    <style>
+        *{
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 14px;
+        }
+        body{
+            margin: 0;
+            padding: 10px;
+            background: url(img/background.png);
+            font-size: 14px;
+            width: 1200px;
+            height: 1450px;
+        }
+        #leftmain{
+            width: 820px;
+            height: 1300px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background: rgba(255, 255, 255, 0.082);
+            float: left;
+            position: relative;
+        }
+        footer{
+            width: 810px;
+            height: 100px;
+            margin-left: 10px;
+            background: rgb(238,238,238);
+            float: left;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.473);
+            position: relative;
+        }
+        footer a{
+            display: inline-block;
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.486);
+            margin: 0;
+            padding: 0;
+            margin-top: 5px;
+            padding-left: 10px;
+            transition: 0.3s;
+            position: relative;
+        }
+        footer img{
+            height: 100px;
+            position: absolute;
+            top: 0;
+            right: 10px;
+        }
+        footer p{
+            margin: 0;
+            padding: 0;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        footer a:hover{
+            color: black;
+        }
+        #foottop{
+            margin-left: 5px;
+        }
+        #foottop>a{
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+        #foottop>a::after{
+            content: "";
+            position:absolute;
+            display: inline-block;
+            top: 50%;
+            left: -1px;
+            border-right: 4px solid rgba(0, 0, 0, 0.486);
+            width: 100%;
+            height: 4px;
+            transform-origin: center right;
+            transform: rotate(45deg);
+        }
+        #foottop>a:last-child::after{
+            display: none;
+        }
+        .box{
+            width: 400px;
+            height: 250px;
+            margin-bottom: 10px;
+            margin-right: 10px;
+            background: white;
+            float: left;
+            position: relative;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.473);
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+
+        .boxcon{
+            height: 100px;
+            width: 400px;
+            margin-top: 10px;
+            position: relative;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .boxcon >img{
+            height: 100px;
+            float: left;
+            margin-left: 5px;
+        }
+        .boxcon>h2{
+            font-size: 16px;
+            color: black;
+            margin: 0;
+            margin-top: 10px;
+            margin-left: 85px;
+        }
+        .boxcon>p{
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.486);
+            margin: 0;
+            margin-top: 5px;
+            margin-left: 85px;
+        }
+        .livecon{
+            height: 210px;
+            width: 130px;
+            margin-top: 10px;
+            margin-left: 2px;
+            position: relative;
+            text-decoration: none;
+            float: left;
+            transition: 0.3s;
+        }
+        .livecon >img{
+            width: 90px;
+            height: 120px;
+            margin: 0;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .livecon>h2{
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            margin: 0;
+        }
+        .livecon>h3{
+            font-size: 11px;
+            color: black;
+            margin: 0;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .livecon>p{
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.486);
+            margin: 0;
+            width: 130px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .livecon>p>i{
+            font-size: 10px;
+        }
+        .livecon:hover, .boxcon:hover{
+            background: rgba(0, 0, 0, 0.103);
+        }
+
+        .bigbox{
+            width: 400px;
+            height: 510px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            background: white;
+            float: left;
+            position: relative;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.473);
+        }
+        #leftmain div > h1{
+            position: absolute;
+            top: -5px;
+            left: 10px;
+            font-size: 16px;
+        }
+        #leftmain .bigbox > input[type="radio"]
+        {
+            position: absolute;
+            left: -99999px;
+            top: -99999px;
+        }
+        #leftmain .bigbox > label{
+            float: right;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 15px;
+            color: rgba(0, 0, 0, 0.514);
+        }
+
+        #leftmain .bigbox > input[type="radio"]:checked + label {
+            color: black;
+        }
+        .bigcon{
+            width: 400px;
+            height: 460px;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            display: none;
+        }
+        #leftmain .bigbox > #toon:checked ~#toonbox{
+            display: block;
+        }
+        #leftmain .bigbox > #nobel:checked ~#nobelbox{
+            display: block;
+        }
+        .bigbox >div >ul{
+            position: relative;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 400px;
+            text-align: center;
+        }
+        .bigbox >div > ul>li{
+            float: left;
+            width: 12.5%;
+            height: 25px;
+        }
+        .bigbox >div >ul>li>label{
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s;
+            border-bottom: 3px solid #9797977e;
+        }
+        .bigbox >div >ul>li>input[type="radio"]:checked +label{
+            border-bottom: 3px solid #feda32;
+        }
+        .bigbox >div >ul >li>label:hover{
+            background: rgba(0, 0, 0, 0.11);
+        }
+        .con{
+            width: 100%;
+            height: 430px;
+            position: absolute;
+            left: 0;
+            top: 30px;
+            display: none;
+        }
+
+        .bigbox >div >ul>li>input[type="radio"]:checked ~.con{
+            display: block;
+        }
+        .con > .smallcon{
+            text-decoration: none;
+            color: black;
+            width: 400px;
+            height: 80px;
+            display: inline-block;
+            padding: 0;
+            margin-top: 2px;
+            transition: 0.3s;
+        }
+        .con > .smallcon>*{
+            float: left;
+            padding: 0;
+        }
+        .smallcon>h2{
+            line-height: 80px;
+            margin: 0;
+            width: 30px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .smallcon>img{
+            height: 80px;
+            width: 60px;
+            background: rgba(255, 255, 255, 0);
+        }
+        .smallcon>h3{
+            width:280px;
+            text-align: left;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+            margin-left: 10px;
+            margin-top: 5px;
+        }
+        .smallcon>p{
+            width: 280px;
+            text-align: left;
+            padding: 0;
+            margin: 0;
+            margin-left: 10px;
+            margin-top: 5px;
+            height: 20px;
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.562);
+        }
+        .smallcon>p>i{
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+        }
+        .smallcon:hover{
+            background: rgba(0, 0, 0, 0.103);
+        }
+        input[type="radio"]{
+            position: absolute;
+            left: -99999px;
+            top: -99999px;
+        }
+
+        #more{
+            position: absolute;
+            top: 5px;
+            right: 10px;
+        }
+        #more>a{
+            font-size: 14px;
+            color: rgba(0, 0, 0, 0.26);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        #more:hover>a{
+            color: black;
+        }
+
+        /*오른쪽 사이드바*/
+        #rightside{
+            float: left;
+            width: 340px;
+            height: 1300px;
+            margin-top: 10px;
+            position: relative;
+        }
+        .sidebox{
+            background: rgb(69, 71, 75);
+            width: 340px;
+            float: left;
+            margin-bottom: 10px;
+            box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.473);
+            position: relative;
+            overflow: hidden;
+        }
+        .loginbox{
+            height: 110px;
+        }
+        .loginbox>#loginbtn{
+            width: 280px;
+            height: 60px;
+            position: absolute;
+            top: 10px;
+            left: 170px;
+            transform: translateX(-50%);
+            background: #feda32;
+            box-shadow: 2px 2px 2px black;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .loginbox>#loginbtn:hover{
+            box-shadow: 0px 0px 1px black;
+            top: 12px;
+            left: 172px;
+        }
+        .loginbox>a{
+            text-decoration: none;
+            position: absolute;
+            bottom: 10px;
+            color: white;
+            margin-left: 20px;
+            margin-right: 20px;
+            text-shadow: 2px 2px 2px black;
+            transition: 0.3s;
+        }
+        .loginbox>a:last-child{
+            right: 0;
+        }
+        .loginbox>a:hover{
+            text-shadow: 0px 0px 1px black;
+            transform: translate(2px,2px);
+        }
+        .mainevent{
+            height: 227px;
+        }
+        .mainevent>a{
+            display: inline-block;
+            width: 340px;
+            height: 227px;
+            position: absolute;
+            background-size: 100%;
+            animation: ani 15s infinite normal cubic-bezier(1,0,.39,0);
+        }
+        #mainevent1{
+            background-image: url("img/mainevent.PNG");
+            top: 0;
+            left: 0;
+        }
+        #mainevent2{
+            background-image: url("img/mainevent2.PNG");
+            top: 0;
+            left: 350px;
+        }
+        #mainevent3{
+            background-image: url("img/mainevent3.PNG");
+            top: 0;
+            left: 700px;
+        }
+
+        @keyframes ani{
+            0%{transform: translateX(0);
+            }
+            30%{
+                transform: translateX(-350px);
+            }
+            60%{
+                transform: translateX(-700px);
+            }
+        }
+
+        .sub1{
+            height: 204px;
+        }
+        .sub2{
+            height: 67px;
+        }
+        .sub3{
+            height: 100px;
+        }
+        .last{
+            height: 227px;
+        }
+        .sidebox>a>img{
+            position: relative;
+            width: 340px;
+        }
+    </style>
+</head>
+<body>
+    <section id="leftmain">
+        <div class="bigbox">
+            <h1>요일 연재 TOP</h1>
+            <input type="radio" name="
+            category" id="nobel">
+            <label for="nobel">웹소설<i class="fa-solid fa-clock"></i></label>
+            <input type="radio" name="
+            category" id="toon" checked>
+            <label for="toon">웹툰<i class="fa-solid fa-clock"></i></label>
+            <div id="toonbox" class="bigcon">
+                <ul>
+                    <li>
+                        <input type="radio" name="week" id="mon" checked>
+                        <label for="mon">월</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/mon/1.jpg" alt="월요일1위">
+                                <h3>이번 생은 가주가 되겠습니다</h3>
+                                <p>글 엔트스튜디오 / 그림 몬,엔트스튜디오 / 원작 김로아</p>
+                                <p><i class="fa-solid fa-user"></i>134.9만명 <i class="fa-solid fa-comment"></i>7.6만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/mon/2.jpg" alt="월요일2위">
+                                <h3>녹음의 관</h3>
+                                <p>글 삵,김은혜 / 그림 비누 / 원작 시야</p>
+                                <p><i class="fa-solid fa-user"></i>123.8만명 <i class="fa-solid fa-comment"></i>3.9만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/mon/3.jpg" alt="월요일3위">
+                                <h3>레벨업 못하는 플레이어</h3>
+                                <p>글 앵무새 / 그림 박정재,스튜디오 크힛/ 원작 가빈지</p>
+                                <p><i class="fa-solid fa-user"></i>87.6만명 <i class="fa-solid fa-comment"></i>1.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/mon/4.jpg" alt="월요일4위">
+                                <h3>남편은 됐고, 돈이나 벌렵니다</h3>
+                                <p>그림 몰코 / 원작 주해온</p>
+                                <p><i class="fa-solid fa-user"></i>38.8만명 <i class="fa-solid fa-comment"></i>4,786</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/mon/5.jpg" alt="월요일5위">
+                                <h3>우선 남동생부터 숨기자</h3>
+                                <p>글 자목 / 그림 천리 / 원작 채지후</p>
+                                <p><i class="fa-solid fa-user"></i>53만명 <i class="fa-solid fa-comment"></i>8,643</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="tue">
+                        <label for="tue">화</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/tue/1.jpg" alt="화요일1위">
+                                <h3>도굴왕</h3>
+                                <p>글 윤쓰 / 그림 쓰리비투에스 / 원작 산지직송</p>
+                                <p><i class="fa-solid fa-user"></i>334.1만명 <i class="fa-solid fa-comment"></i>9.6만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/tue/2.jpg" alt="화요일2위">
+                                <h3>록사나 : 여주인공의 오빠를 지키는 방법</h3>
+                                <p>글 여름빛 / 그림 여름빛 / 원작 킨</p>
+                                <p><i class="fa-solid fa-user"></i>83.6만명 <i class="fa-solid fa-comment"></i>2.8만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/tue/3.jpg" alt="화요일3위">
+                                <h3>악녀는 마리오네트</h3>
+                                <p>글 정인 / 그림 망글이 / 원작 한이림</p>
+                                <p><i class="fa-solid fa-user"></i>124.8만명 <i class="fa-solid fa-comment"></i>4.8만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/tue/4.jpg" alt="화요일4위">
+                                <h3>결혼장사</h3>
+                                <p>글 엔트스튜디오,한흔 / 그림 엔트스튜디오 / 원작 KEN</p>
+                                <p><i class="fa-solid fa-user"></i>50.1만명 <i class="fa-solid fa-comment"></i>1.5만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/tue/5.jpg" alt="화요일5위">
+                                <h3>막내 황녀님</h3>
+                                <p>설명</p>
+                                <p><i class="fa-solid fa-user"></i>126.1만명 <i class="fa-solid fa-comment"></i>4.9만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="wed">
+                        <label for="wed">수</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/wed/1.jpg" alt="수요일1위">
+                                <h3>당신의 이해를 돕기 위하여</h3>
+                                <p>글 라뇽 / 그림 오션 / 원작 이보라</p>
+                                <p><i class="fa-solid fa-user"></i>228만명 <i class="fa-solid fa-comment"></i>5.7만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/wed/2.jpg" alt="수요일2위">
+                                <h3>나는 될놈이다</h3>
+                                <p>그림 서윤교 / 원작 글쓰는기계</p>
+                                <p><i class="fa-solid fa-user"></i>70만명 <i class="fa-solid fa-comment"></i>1.1만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/wed/3.jpg" alt="수요일3위">
+                                <h3>황제의 아이를 숨기는 방법</h3>
+                                <p>글 26 / 그림 쌀 / 원작 이연선</p>
+                                <p><i class="fa-solid fa-user"></i>67.2만명 <i class="fa-solid fa-comment"></i>1.4만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/wed/4.jpg" alt="수요일4위">
+                                <h3>진짜 딸이 돌아왔다</h3>
+                                <p>그림 마루코믹스 / 원작 린아</p>
+                                <p><i class="fa-solid fa-user"></i>30.9만명 <i class="fa-solid fa-comment"></i>2,785</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/wed/5.jpg" alt="수요일5위">
+                                <h3>인소의 법칙</h3>
+                                <p>글 아현 / 그림 아현 / 원작 유한려</p>
+                                <p><i class="fa-solid fa-user"></i>151.1만명 <i class="fa-solid fa-comment"></i>15만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="thur">
+                        <label for="thur">목</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/thur/1.jpg" alt="목요일1위">
+                                <h3>아빠, 나 이 결혼 안 할래요!</h3>
+                                <p>글 유리 / 그림 Roal / 원작 홍희수</p>
+                                <p><i class="fa-solid fa-user"></i>95.2만명 <i class="fa-solid fa-comment"></i>6.5만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/thur/2.jpg" alt="목요일2위">
+                                <h3>나 혼자만 레벨업</h3>
+                                <p>글 현군 / 그림 장성락 / 원작 추공</p>
+                                <p><i class="fa-solid fa-user"></i>488.4만명 <i class="fa-solid fa-comment"></i>36.3만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/thur/3.jpg" alt="목요일3위">
+                                <h3>착한 언니는 없다</h3>
+                                <p>글 주기,세림 / 그림 내일 / 원작 윤여음</p>
+                                <p><i class="fa-solid fa-user"></i>32.8만명 <i class="fa-solid fa-comment"></i>2,911</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/thur/4.jpg" alt="목요일4위">
+                                <h3>악당의 아빠를 꼬셔라</h3>
+                                <p>글 비아 / 그림 비아 / 원작 달슬</p>
+                                <p><i class="fa-solid fa-user"></i>165.2만명 <i class="fa-solid fa-comment"></i>8만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/thur/5.jpg" alt="목요일5위">
+                                <h3>신데렐라는 내가 아니었다</h3>
+                                <p>그림 도바 / 원작 과앤</p>
+                                <p><i class="fa-solid fa-user"></i>51.8만명 <i class="fa-solid fa-comment"></i>9,128</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="fri">
+                        <label for="fri">금</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/fri/1.jpg" alt="금요일1위">
+                                <h3>용사의 어머니가 되겠습니다</h3>
+                                <p>글 카푸 / 그림 카푸 / 원작 엘리아냥</p>
+                                <p><i class="fa-solid fa-user"></i>36.9만명 <i class="fa-solid fa-comment"></i>2,050</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/fri/2.jpg" alt="금요일2위">
+                                <h3>도굴왕</h3>
+                                <p>글 윤쓰 / 그림 쓰리비투에스 / 원작 산지직송</p>
+                                <p><i class="fa-solid fa-user"></i>334.1만명 <i class="fa-solid fa-comment"></i>9.6만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/fri/3.jpg" alt="금요일3위">
+                                <h3>다시 한번, 빛 속으로</h3>
+                                <p>그림 유야 / 원작 티카티카/p>
+                                <p><i class="fa-solid fa-user"></i>61.1만명 <i class="fa-solid fa-comment"></i>1.9만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/fri/4.jpg" alt="금요일4위">
+                                <h3>절대무신</h3>
+                                <p>글 전상,이거 / 그림 숙취 / 원작 적하</p>
+                                <p><i class="fa-solid fa-user"></i>66.4만명 <i class="fa-solid fa-comment"></i>7,660</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/fri/5.jpg" alt="금요일5위">
+                                <h3>화홍</h3>
+                                <p>글 서윤역 / 그림 서윤영 / 원작 이지환</p>
+                                <p><i class="fa-solid fa-user"></i>119.2만명 <i class="fa-solid fa-comment"></i>8.7만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="sat">
+                        <label for="sat">토</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/sat/1.jpg" alt="토요일1위">
+                                <h3>토끼와 흑표범의 공새관계</h3>
+                                <p>글 목인 / 그림 사담 / 원작 야식먹는중</p>
+                                <p><i class="fa-solid fa-user"></i>91.1만명 <i class="fa-solid fa-comment"></i>4.3만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/sat/2.jpg" alt="토요일2위">
+                                <h3>템빨</h3>
+                                <p>글 이동욱 / 그림 Team Argo / 박새날</p>
+                                <p><i class="fa-solid fa-user"></i>171.1만명 <i class="fa-solid fa-comment"></i>5만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/sat/3.jpg" alt="토요일3위">
+                                <h3>악녀는 모래시계를 되돌린다</h3>
+                                <p>글 엔트스튜디오 / 그림 엔트스튜디오 / 원작 산소비</p>
+                                <p><i class="fa-solid fa-user"></i>124.8만명 <i class="fa-solid fa-comment"></i>6.7만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/sat/4.jpg" alt="토요일4위">
+                                <h3>우리가 가족이 될 수 있을까요?</h3>
+                                <p>글 말차비엔나 / 그림 말차비엔나 / 원작 한이림</p>
+                                <p><i class="fa-solid fa-user"></i>54.5만명 <i class="fa-solid fa-comment"></i>7,152</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/sat/5.jpg" alt="토요일5위">
+                                <h3>곱게 키운 악당들</h3>
+                                <p>그림 푼양 / 원작 솔깃</p>
+                                <p><i class="fa-solid fa-user"></i>33.5만명 <i class="fa-solid fa-comment"></i>1,850</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="sun">
+                        <label for="sun">일</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/sun/1.jpg" alt="일요일1위">
+                                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                                <p>글 장진 / 그림 소흔 / 원작 백덕수</p>
+                                <p><i class="fa-solid fa-user"></i>122.8만명 <i class="fa-solid fa-comment"></i>3.3만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/sun/2.jpg" alt="일요일2위">
+                                <h3>책만 보고 탑배우!</h3>
+                                <p>글 카네 / 그림 챠도(COPIN) / 원작 이한성</p>
+                                <p><i class="fa-solid fa-user"></i>18.6만명 <i class="fa-solid fa-comment"></i>754</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/sun/3.jpg" alt="일요일3위">
+                                <h3>남장여주라고  했잖아요!</h3>
+                                <p>글 단풍새 / 그림 이나 / 원작 강다윤</p>
+                                <p><i class="fa-solid fa-user"></i>27.4만명 <i class="fa-solid fa-comment"></i>2,061</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/sun/4.jpg" alt="일요일4위">
+                                <h3>폭군을 길들이고 도망쳐버렸다</h3>
+                                <p>글 지현 / 그림 멜팅 / 원작 유소이</p>
+                                <p><i class="fa-solid fa-user"></i>93.8만명 <i class="fa-solid fa-comment"></i>2.7만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/sun/5.jpg" alt="일요일5위">
+                                <h3>빙의자를 위한 특혜</h3>
+                                <p>그림 구르 / 원작 이린비</p>
+                                <p><i class="fa-solid fa-user"></i>63.6만명 <i class="fa-solid fa-comment"></i>1.6만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week" id="end">
+                        <label for="end">완결</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/toon/end/1.jpg" alt="완결1위">
+                                <h3>괴물 공작가의 계약 공녀</h3>
+                                <p>그림 민작 / 원작 리아란</p>
+                                <p><i class="fa-solid fa-user"></i>121.2만명 <i class="fa-solid fa-comment"></i>7.7만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/toon/end/2.jpg" alt="완결2위">
+                                <h3>나 혼자 만렙 귀환자</h3>
+                                <p>글 이지득 / 그림 Vertwo / 원작 허니</p>
+                                <p><i class="fa-solid fa-user"></i>81.6만명 <i class="fa-solid fa-comment"></i>1.4만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/toon/end/3.jpg" alt="완결3위">
+                                <h3>악녀의 정의</h3>
+                                <p>글 윤쓰 / 그림 민 / 원작 주해온</p>
+                                <p><i class="fa-solid fa-user"></i>161.6만명 <i class="fa-solid fa-comment"></i>7만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/toon/end/4.jpg" alt="완결4위">
+                                <h3>왜 이러세요, 공작님!</h3>
+                                <p>글 에디 / 그림 에디 / 원작 반달반지</p>
+                                <p><i class="fa-solid fa-user"></i>138.2만명 <i class="fa-solid fa-comment"></i>5.6만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/toon/end/5.jpg" alt="완결5위">
+                                <h3>그녀가 공작저로 가야 했던 사정</h3>
+                                <p>글 고래 / 그림 고래 / 원작 밀차</p>
+                                <p><i class="fa-solid fa-user"></i>213.7만명 <i class="fa-solid fa-comment"></i>23.4만</p>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="nobelbox" class="bigcon">
+                <ul>
+                    <li>
+                        <input type="radio" name="week2" id="mon2" checked>
+                        <label for="mon2">월</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/mon/1.jpg" alt="월요일1위">
+                                <h3>템빨</h3>
+                                <p>판타지 | 작가 박새날</p>
+                                <p><i class="fa-solid fa-user"></i>294.9만명 <i class="fa-solid fa-comment"></i>58.4만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/mon/2.jpg" alt="월요일2위">
+                                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                                <p>현판 | 작가 백덕수</p>
+                                <p><i class="fa-solid fa-user"></i>211.1만명 <i class="fa-solid fa-comment"></i>95.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/mon/3.jpg" alt="월요일3위">
+                                <h3>곧 망할 가문의 계약직 딸이 되었다</h3>
+                                <p>로판 | 작가 하라쇼</p>
+                                <p><i class="fa-solid fa-user"></i>23.9만명 <i class="fa-solid fa-comment"></i>2,895</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/mon/4.jpg" alt="월요일4위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/mon/5.jpg" alt="월요일5위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="tue2">
+                        <label for="tue2">화</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/tue/1.jpg" alt="화요일1위">
+                                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                                <p>현판 | 작가 백덕수</p>
+                                <p><i class="fa-solid fa-user"></i>211.1만명 <i class="fa-solid fa-comment"></i>95.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/tue/2.jpg" alt="화요일2위">
+                                <h3>곧 망할 가문의 계약직 딸이 되었다</h3>
+                                <p>로판 | 작가 하라쇼</p>
+                                <p><i class="fa-solid fa-user"></i>23.9만명 <i class="fa-solid fa-comment"></i>2,895</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/tue/3.jpg" alt="화요일3위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/tue/4.jpg" alt="화요일4위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/tue/5.jpg" alt="화요일5위">
+                                <h3>이 3세는 악역입니다</h3>
+                                <p>로판 | 작가 리샤</p>
+                                <p><i class="fa-solid fa-user"></i>81.2만명 <i class="fa-solid fa-comment"></i>7.2만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="wed2">
+                        <label for="wed2">수</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/wed/1.jpg" alt="수요일1위">
+                                <h3>템빨</h3>
+                                <p>판타지 | 작가 박새날</p>
+                                <p><i class="fa-solid fa-user"></i>294.9만명 <i class="fa-solid fa-comment"></i>58.4만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/wed/2.jpg" alt="수요일2위">
+                                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                                <p>현판 | 작가 백덕수</p>
+                                <p><i class="fa-solid fa-user"></i>211.1만명 <i class="fa-solid fa-comment"></i>95.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/wed/3.jpg" alt="수요일3위">
+                                <h3>곧 망할 가문의 계약직 딸이 되었다</h3>
+                                <p>로판 | 작가 하라쇼</p>
+                                <p><i class="fa-solid fa-user"></i>23.9만명 <i class="fa-solid fa-comment"></i>2,895</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/wed/4.jpg" alt="수요일4위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/wed/5.jpg" alt="수요일5위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="thur2">
+                        <label for="thur2">목</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/thur/1.jpg" alt="목요일1위">
+                                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                                <p>현판 | 작가 백덕수</p>
+                                <p><i class="fa-solid fa-user"></i>211.1만명 <i class="fa-solid fa-comment"></i>95.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/thur/2.jpg" alt="목요일2위">
+                                <h3>곧 망할 가문의 계약직 딸이 되었다</h3>
+                                <p>로판 | 작가 하라쇼</p>
+                                <p><i class="fa-solid fa-user"></i>23.9만명 <i class="fa-solid fa-comment"></i>2,895</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/thur/3.jpg" alt="목일3위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/thur/4.jpg" alt="목요일4위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/thur/5.jpg" alt="목요일5위">
+                                <h3>이 3세는 악역입니다</h3>
+                                <p>로판 | 작가 리샤</p>
+                                <p><i class="fa-solid fa-user"></i>81.2만명 <i class="fa-solid fa-comment"></i>7.2만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="fri2">
+                        <label for="fri2">금</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/fri/1.jpg" alt="금요일1위">
+                                <h3>템빨</h3>
+                                <p>판타지 | 작가 박새날</p>
+                                <p><i class="fa-solid fa-user"></i>294.9만명 <i class="fa-solid fa-comment"></i>58.4만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/fri/2.jpg" alt="금요일2위">
+                                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                                <p>현판 | 작가 백덕수</p>
+                                <p><i class="fa-solid fa-user"></i>211.1만명 <i class="fa-solid fa-comment"></i>95.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/fri/3.jpg" alt="금요일3위">
+                                <h3>곧 망할 가문의 계약직 딸이 되었다</h3>
+                                <p>로판 | 작가 하라쇼</p>
+                                <p><i class="fa-solid fa-user"></i>23.9만명 <i class="fa-solid fa-comment"></i>2,895</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/fri/4.jpg" alt="금요일4위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/fri/5.jpg" alt="금요일5위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="sat2">
+                        <label for="sat2">토</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/sat/1.jpg" alt="토요일1위">
+                                <h3>템빨</h3>
+                                <p>판타지 | 작가 박새날</p>
+                                <p><i class="fa-solid fa-user"></i>294.9만명 <i class="fa-solid fa-comment"></i>58.4만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/sat/2.jpg" alt="토요일2위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/sat/3.jpg" alt="토요일3위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/sat/4.jpg" alt="토요일4위">
+                                <h3>악녀가 되기를 원하신다면</h3>
+                                <p>로판 | 작가 무소</p>
+                                <p><i class="fa-solid fa-user"></i>15.9만명 <i class="fa-solid fa-comment"></i>1,653</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/sat/5.jpg" alt="토요일5위">
+                                <h3>점괘보는 공녀님</h3>
+                                <p>로판 | 작가 사이딘</p>
+                                <p><i class="fa-solid fa-user"></i>40.7만명 <i class="fa-solid fa-comment"></i>3.7만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="sun2">
+                        <label for="sun2">일</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/sun/1.jpg" alt="일요일1위">
+                                <h3>신마의선</h3>
+                                <p>무협 | 작가 권태용,악산</p>
+                                <p><i class="fa-solid fa-user"></i>16.2만명 <i class="fa-solid fa-comment"></i>1,659</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/sun/2.jpg" alt="일요일2위">
+                                <h3>혼술사 도로테아</h3>
+                                <p>판타지 | 작가 세이료우</p>
+                                <p><i class="fa-solid fa-user"></i>14.2만명 <i class="fa-solid fa-comment"></i>4,273</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/sun/3.jpg" alt="일요일3위">
+                                <h3>악녀가 되기를 원하신다면</h3>
+                                <p>로판 | 작가 무소</p>
+                                <p><i class="fa-solid fa-user"></i>15.9만명 <i class="fa-solid fa-comment"></i>1,653</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/sun/4.jpg" alt="일요일4위">
+                                <h3>점괘보는 공녀님</h3>
+                                <p>로판 | 작가 사이딘</p>
+                                <p><i class="fa-solid fa-user"></i>40.7만명 <i class="fa-solid fa-comment"></i>3.7만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/sun/5.jpg" alt="일요일5위">
+                                <h3>아빠가 힘을 숨김</h3>
+                                <p>로판 | 작가 고은채</p>
+                                <p><i class="fa-solid fa-user"></i>34.7만명 <i class="fa-solid fa-comment"></i>1.4만</p>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="week2" id="end2">
+                        <label for="end2">완결</label>
+                        <div class="con">
+                            <a href="#" class="smallcon">
+                                <h2>1위</h2>
+                                <img src="img/nobel/end/1.jpg" alt="완결1위">
+                                <h3>닥터 최태수</h3>
+                                <p>현판 | 작가 조석호</p>
+                                <p><i class="fa-solid fa-user"></i>216.3만명 <i class="fa-solid fa-comment"></i>50.2만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>2위</h2>
+                                <img src="img/nobel/end/2.jpg" alt="완결2위">
+                                <h3>악녀는 그림을 그린다</h3>
+                                <p>로판 | 작가 리티티</p>
+                                <p><i class="fa-solid fa-user"></i>10.3만명 <i class="fa-solid fa-comment"></i>2,748</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>3위</h2>
+                                <img src="img/nobel/end/3.jpg" alt="완결3위">
+                                <h3>불공정 결혼</h3>
+                                <p>로맨스 | 작가 유나진</p>
+                                <p><i class="fa-solid fa-user"></i>16.6만명 <i class="fa-solid fa-comment"></i>4,110</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>4위</h2>
+                                <img src="img/nobel/end/4.jpg" alt="완결4위">
+                                <h3>창천무신</h3>
+                                <p>무협 | 작가 담호</p>
+                                <p><i class="fa-solid fa-user"></i>78.2만명 <i class="fa-solid fa-comment"></i>6.3만</p>
+                            </a>
+                            <a href="#" class="smallcon">
+                                <h2>5위</h2>
+                                <img src="img/nobel/end/5.jpg" alt="완결5위">
+                                <h3>오빠 냄새</h3>
+                                <p>로맨스 | 작가 아유이</p>
+                                <p><i class="fa-solid fa-user"></i>15.7만명 <i class="fa-solid fa-comment"></i>8,296</p>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="box">
+            <h1>기다리면 무료 웹툰</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/wait/toon/1_당이해.jpg" alt="당신의 이해를 돕기 위하여">
+                <h2>당신의 이해를 돕기 위하여</h2>
+                <p>당신, 내 장례식엔 와줄래요?</p>
+                <p><i class="fa-solid fa-user"></i>228만 | 로판 | 라뇽,오션,이보라</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/wait/toon/2_인소.jpg" alt="인소의 법칙">
+                <h2>인소의 법칙</h2>
+                <p>미인 여주가 내 친구라고?!</p>
+                <p><i class="fa-solid fa-user"></i>151.1만 | 로판 | 아현,유한려</p>
+            </a>
+        </div>
+        <div class="box">
+            <h1>기다리면 무료 소설</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/wait/nobel/1_행운토템.jpg" alt="랭커들의 행운 토템이 되었습니다">
+                <h2>랭커들의 행운 토템이 되었습니다</h2>
+                <p>오늘은 이 던전까지만 돌래요!</p>
+                <p><i class="fa-solid fa-user"></i>7.2만 | 로판 | 샤르메</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/wait/nobel/2_어느날남편.jpg" alt="어느 날 남편이 나타났다">
+                <h2>어느 날 남편이 나타났다</h2>
+                <p>2년 후, 우린 결혼해요</p>
+                <p><i class="fa-solid fa-user"></i>10.1만 | 로맨스 | 차혜진(초콜릿악마)</p>
+            </a>
+        </div>
+        <div class="box">
+            <h1>인기 웹툰</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/popular/toon/1_렌탈샵.jpg" alt="렌탈샵">
+                <h2>렌탈샵</h2>
+                <p>부러워했던 아이와 몸이 바뀌었다!</p>
+                <p><i class="fa-solid fa-user"></i>8,167 | 드라마 | 모니</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/popular/toon/2_2D남친.png" alt="2D 남친과 엔딩을 보는법">
+                <h2>2D 남친과 엔딩을 보는법</h2>
+                <p>2D 남자들과의 로맨스</p>
+                <p><i class="fa-solid fa-user"></i>1.2만 | 로맨스 | 글무원,군감</p>
+            </a>
+        </div>
+        <div class="box">
+            <h1>인기 웹소설</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/popular/nobel/1_서녀환생.jpg" alt="서녀가 환생을 숨김">
+                <h2>서녀가 환생을 숨김</h2>
+                <p>제 인생은 제가 선택해요</p>
+                <p><i class="fa-solid fa-user"></i>7.3만 | 로맨스 | 리리코스</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/popular/nobel/2_악역관심.jpg" alt="악역의 관심을 받아버렸다">
+                <h2>악역의 관심을 받아버렸다</h2>
+                <p>내가 그대에게 사랑에 빠졌거든</p>
+                <p><i class="fa-solid fa-user"></i>5.8만명 | 로판 | 이리내</p>
+            </a>
+        </div>
+        <div class="box live">
+            <h1>실시간 랭킹</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="livecon">
+                <img src="img/live/1_데뷔못죽.jpg" alt="실시간랭킹1위">
+                <h2>1위</h2>
+                <h3>데뷔 못 하면 죽는 병 걸림</h3>
+                <p><i class="fa-solid fa-user"></i>5.8만명 | 현판 | 소설</p>
+            </a>
+            <a href="#" class="livecon">
+                <img src="img/live/2_신마의선.jpg" alt="실시간랭킹2위">
+                <h2>2위</h2>
+                <h3>신마의선</h3>
+                <p><i class="fa-solid fa-user"></i>5.8만명 | 무협 | 소설</p>
+            </a>
+            <a href="#" class="livecon">
+                <img src="img/live/3_당이해.jpg" alt="실시간랭킹3위">
+                <h2>3위</h2>
+                <h3>당신의 이해를 돕기 위하여</h3>
+                <p><i class="fa-solid fa-user"></i>5.8만명 | 로판 | 웹툰</p>
+            </a>
+        </div>
+        <div class="box">
+            <h1>화제의 베스트셀러</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/best/1_사내복지악령.jpg" alt="사내 복지는 악령 퇴치부터 시작합니다">
+                <h2>사내 복지는 악령 퇴치부터 시작합니다</h2>
+                <p>좌충우돌 오피스 액션 퇴마물!</p>
+                <p><i class="fa-solid fa-user"></i>4만 | 작가 최영원</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/best/3_때로는행복.jpg" alt="때로는 행복 대신 불행을 택하기도 한다">
+                <h2>때로는 행복 대신 불행을 택하기도 한다</h2>
+                <p>김진명 작가 신작 에세이 기다무 런칭!</p>
+                <p><i class="fa-solid fa-user"></i>3.6만명 | 김진명</p>
+            </a>
+        </div>
+        <div class="box">
+            <h1>도전! 밀리언페이지 웹툰</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/millon/toon/1_공작은밀.jpg" alt="공작 부인의 은밀한 집필">
+                <h2>공작 부인의 은밀한 집필</h2>
+                <p>제국 스케일의 깜찍한 밀당!</p>
+                <p><i class="fa-solid fa-user"></i>22.6만 | 로판 | 버터,지요,밤비</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/millon/toon/2_남편됐고.jpg" alt="남편은 됐고, 돈이나 벌렵니다">
+                <h2>남편은 됐고, 돈이나 벌렵니다</h2>
+                <p>그런데...침대를 부숴버렸다?!</p>
+                <p><i class="fa-solid fa-user"></i>38.8만명 | 로판 | 몰코,주해온</p>
+            </a>
+        </div>
+        <div class="box">
+            <h1>밀리언페이지 소설</h1>
+            <div id="more"><a href="#">더보기<i class="fa-solid fa-angle-right"></i></a></div>
+            <a href="#" class="boxcon">
+                <img src="img/millon/nobel/1_장르바꿔.jpg" alt="장르를 바꿔보도록 하겠습니다">
+                <h2>장르를 바꿔보도록 하겠습니다</h2>
+                <p>나쁜 이모는 되지 않기로 했다</p>
+                <p><i class="fa-solid fa-user"></i>71만 | 로판 | KEN</p>
+            </a>
+            <a href="#" class="boxcon">
+                <img src="img/millon/nobel/2_만렙귀환.jpg" alt="만렙 영웅님께서 귀환하신다!">
+                <h2>만렙 영웅님께서 귀환하신다!</h2>
+                <p>천년 동안 굴렀으면 됐잖아?!</p>
+                <p><i class="fa-solid fa-user"></i>85.3만명 | 판타지 | 악마꼬리</p>
+            </a>
+        </div>
+    </section>
+    <aside id="rightside">
+        <div class="loginbox sidebox">
+            <button id="loginbtn">
+                <p>카카오 로그인</p>
+            </button>
+            <a href="#">아이디,비밀번호찾기</a>
+            <a href="#"><i class="fa-solid fa-user"></i>회원가입</a>
+        </div>
+        <div class="mainevent sidebox">
+            <a href="#event1" id="mainevent1"></a>
+            <a href="#event2" id="mainevent2"></a>
+            <a href="#event3" id="mainevent3"></a>
+        </div>
+        <div class="sub1 sidebox">
+            <a href="#"><img src="img/subevent.PNG" alt=""></a>
+        </div>
+        <div class="sub2 sidebox">
+            <a href="#"><img src="img/subevent2.PNG" alt=""></a>
+        </div>
+        <div class="sub3 sidebox">
+            <a href="#"><img src="img/subevent3.PNG" alt=""></a>
+        </div>
+        <div class="last sidebox">
+            <a href="#"><img src="img/lastevent.PNG" alt=""></a>
+        </div>
+    </aside>
+    <footer>
+        <div id="foottop">
+            <a href="#">회사소개</a>
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">청소년보호정책</a>
+            <a href="#">공지사항</a>
+        </div>
+        <a href="#">(주)카카오엔터테인먼트 사업자 정보</a>
+        <p>ⓒKakao Entertainment Corp.</p>
+        <img src="img/ok.JPG" alt="저작권">
+    </footer>
+</body>
+</html>

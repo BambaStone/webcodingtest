@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7156c50ef7.js" crossorigin="anonymous"></script>
+    <title>웹코딩평가</title>
+    <style>
+        *{
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 14px;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background: #dddcdb;
+            font-size: 14px;
+        }
+        #wrapper{
+            padding: 0;
+            margin: 0 auto;
+            width: 1200px;
+            background: gray;
+            height: 1450px;
+        }
+        header{
+            min-width: 1200px;
+            height: 150px;
+            background: white;
+            position: relative;
+        }
+        header::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.199);
+        }
+        #topmenu{
+            margin: 0 auto;
+            width: 1200px;
+            height: 150px;
+            position: relative;
+        }
+        header #topmenu #search{
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+        }
+        header #topmenu #search #logo>a{
+            background-image: url('img/kakaopagelogo.PNG');
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            background-position: 50% 50%;
+            background-size: 100%;
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        header #topmenu #search> form> #searchbar >input[type="text"] {
+            width: 250px;
+            background: #feda32;
+            height: 50px;
+            border: none;
+            outline: none;
+            border-radius: 25px;
+            padding-left: 30px;
+            /* position: relative; */
+            box-shadow: inset 2px 2px 3px rgba(0,0,0,0.5);
+            transition: 0.9s;
+            position: absolute;
+            top: 50%;
+            left: 25%;
+            transform: translateY(-50%);
+            font-size: 18px;
+
+        }
+        header #topmenu #search> form> #searchbar >input[type="text"]:hover,header #topmenu #search> form> #searchbar >input[type="text"]:focus {
+            width: 400px;
+        }
+        header #topmenu #search> form> #searchbar >i {
+            position: absolute;
+            top: 50%;
+            left: 26%;
+            color: #fff;
+            transform: translateY(-50%);
+        }
+
+        header #topmenu #search> form> #searchbar >input[type="text"]::placeholder {
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.212)
+        }
+
+        header #topmenu #menu{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+        }
+        header #topmenu #menu #leftmenu{
+            position: absolute;
+            width: 70%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        header #topmenu #menu #rightbanner{
+            position: absolute;
+            width: 30%;
+            height: 100%;
+            right: 0;
+            top: 0;
+        }
+        header #topmenu #menu #rightbanner >a{
+            margin-left: 50px;
+            float: left;
+            height: 50px;
+        }
+        header #topmenu #menu #rightbanner >a>img{
+            height: 50px;
+        }
+
+
+        header #topmenu #menu #leftmenu >label{
+            color: black;
+            float: left;
+            height: 100%;
+            width: 20%;
+            text-align: center;
+            cursor: pointer;
+        }
+        header #topmenu #menu #leftmenu > .nomal,header #topmenu #menu #leftmenu > .nomal>i{
+            font-size: 30px;
+        }
+        header #topmenu #menu #leftmenu > .stagec{
+            font-size: 20px;
+            line-height: 45px;
+            position: relative;
+            z-index: 1;
+        }
+        header #topmenu #menu #leftmenu >.stagec::before{
+            position: absolute;
+            content: "";
+            width: 73px;
+            height: 30px;
+            background: #feda32;
+            top: 5px;
+            left: 50px;
+            z-index: -1;
+        }
+        header #topmenu #menu #leftmenu >.stagec::after{
+            position: absolute;
+            content: "";
+            width: 73px;
+            height: 30px;
+            background: #feda32;
+            bottom: 5px;
+            right: 50px;
+            z-index: -1;
+        }
+        header #topmenu #menu #leftmenu .menueff{
+            position: absolute;
+            width: 20%;
+            height: 3px;
+            background: #feda32;
+            bottom: 0;
+            left: -20%;
+            opacity: 1;
+            pointer-events: none;
+            transition: 0.3s;
+        }
+        header #topmenu #menu #leftmenu > input[type="radio"]{
+            position: absolute;
+            left: -9999px;
+            top: -9999px;
+        }
+        header #topmenu #menu #leftmenu > #home:checked ~.menueff{
+            left: 0%;
+        }
+        header #topmenu #menu #leftmenu > #toon:checked ~.menueff{
+            left: 20%;
+        }
+        header #topmenu #menu #leftmenu > #nobel:checked ~.menueff{
+            left: 40%;
+        }
+        header #topmenu #menu #leftmenu > #book:checked ~.menueff{
+            left: 60%;
+        }
+        header #topmenu #menu #leftmenu > #stage:checked ~.menueff{
+            left: 80%;
+        }
+        #mains{
+            width: 1200px;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <script>
+        function homes(){
+            frames["mains"].location.href='0829-home.html';
+        }
+        function toons(){
+            frames["mains"].location.href='0829-toon.html';
+        }
+        function nobels(){
+            frames["mains"].location.href='0829-nobel.html';
+        }
+        function books(){
+            frames["mains"].location.href='0829-books.html';
+        }
+        function stages(){
+            frames["mains"].location.href='https://pagestage.kakao.com/fantasy';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div id="topmenu">
+            <div id="search">
+                <div id="logo">
+                    <a href="index.html"></a>
+                </div>
+                <form action="action.php">
+                    <div id="searchbar">
+                        <input type="text" placeholder="작가,작품,태그 검색">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </form>
+            </div>
+            <div id="menu">
+                <div id="leftmenu">
+                    <input type="radio" name="tmenu" id="home" checked onclick="homes()">
+                    <label for="home" class="nomal">
+                        홈
+                    </label>
+
+                    <input type="radio" name="tmenu" id="toon" onclick="toons()">
+                    <label for="toon" class="nomal">
+                        웹툰<i class="fa-solid fa-clock"></i>
+                    </label>
+
+                    <input type="radio" name="tmenu" id="nobel" onclick="nobels()">
+                    <label for="nobel" class="nomal">
+                        웹소설<i class="fa-solid fa-clock"></i>
+                    </label>
+
+                    <input type="radio" name="tmenu" id="book" onclick="books()">
+                    <label for="book" class="nomal">
+                        책
+                    </label>
+
+                    <input type="radio" name="tmenu" id="stage" onclick="stages()">
+                    <label for="stage" class="stagec">
+                        STAGE
+                    </label>
+
+                    <div class="menueff"></div>
+                </div>
+                <div id="rightbanner">
+                    <a href="#">
+                        <img src="img/rightbanner.PNG" alt="캐쉬이벤트">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="wrapper">
+        <iframe src="0829-home.html" name="mains" id="mains" scrolling="no" border="no" maginwidth="0" marginheight="0" frameborder="0"></iframe>
+    </div>
+</body>
+</html>
